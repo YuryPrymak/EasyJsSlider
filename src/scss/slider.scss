@@ -1,0 +1,128 @@
+@import 'src/scss/partials/_config.scss';
+
+.slider {
+  max-width: $sliderMaxWidth;
+  position: relative;
+  overflow: hidden;
+
+  .slides {
+    width: 100%;
+    position: relative;
+    padding-left: 0;
+    padding-top: $sliderMaxHeight;
+    list-style-type: none;
+    margin: 0;
+  
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        pointer-events: none;
+        -webkit-object-fit: cover;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
+  
+    .hidden-slide {
+      display: none;
+    }
+  }
+
+  .btn {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    &:hover {
+      svg {
+        fill: $btnBgColorHover;
+      }
+    }
+
+    svg {
+      fill: $btnBgColor;
+      -webkit-transition: fill .2s ease-in-out;
+      -moz-transition: fill .2s ease-in-out;
+      -ms-transition: fill .2s ease-in-out;
+      -o-transition: fill .2s ease-in-out;
+      transition: fill .2s ease-in-out;
+    }
+  }
+
+  .btnPrevSlide {
+    left: 10px;
+  }
+
+  .btnNextSlide {
+    right: 10px;
+  }
+
+  .dots {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin: 0 3px;
+      background-color: $dotsBgColor;
+      border-radius: 50%;
+      cursor: pointer;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background-color: $dotsBgColorHover;
+        transform: scale(1.2);
+      }
+    }
+
+    .active-dot {
+      background-color: $activeDotBgColor;
+      transform: scale(1.2);
+    }
+  }
+}
