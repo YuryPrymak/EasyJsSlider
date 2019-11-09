@@ -1,5 +1,5 @@
 export default class Slider {
-  constructor({ slider, animation, animationDuration, useDots }) {
+  constructor({ slider, animation, animationDuration, useDots, useAutoPlay, autoPlayInterval }) {
     this.animation = animation;
     this.slider = slider;
     this.slides = document.querySelectorAll(`${slider} .slide`);
@@ -14,6 +14,9 @@ export default class Slider {
     this.next = 'next';
     this.animationDuration = animationDuration;
     this.useDots = useDots;
+    this.useAutoPlay = useAutoPlay;
+    this.autoPlayInterval = autoPlayInterval;
+    this.interval;
   }
 
   sliderInit() {
@@ -63,6 +66,10 @@ export default class Slider {
       });
     }
 
+    if(this.useAutoPlay) {
+      this.startSlider();
+    }
+
     for(let i = 0; i < this.slides.length; i++) {
       if(i !== 0) {
         this.slides[i].classList.add('hidden-slide');
@@ -71,8 +78,19 @@ export default class Slider {
     }
   }
 
+  startSlider() {
+    clearTimeout(this.interval);
+    this.interval = setTimeout(() => {
+      if(this.currentSlide < this.quantitySlides - 1) {
+        this.changeSlide(this.currentSlide + 1, this.next);
+      } else {
+        this.changeSlide(0, this.next);
+      }
+    }, this.autoPlayInterval * 1000);
+  }
+
   changeSlide(index, direction) {
-    if(!this.isAnimating) {
+    if(!this.isAnimating && !document.hidden) {
       this.isAnimating = !this.isAnimating;
       this.deleteClasses();
       this.slides[this.currentSlide].classList.add(`${this.animation}-${direction}-slide-hide`);
@@ -86,6 +104,10 @@ export default class Slider {
       setTimeout(() => {
         this.isAnimating = !this.isAnimating;
       }, this.animationDuration * 1000);
+    }
+
+    if(this.useAutoPlay) {
+      this.startSlider();
     }
   }
 

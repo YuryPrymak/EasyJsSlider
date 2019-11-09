@@ -8,6 +8,8 @@ const slider = new Slider({
   animation: 'horizontal-shift',
   animationDuration: 0.7,
   useDots: true,
+  useAutoPlay: true,
+  autoPlayInterval: 5,
 });
 
 slider.sliderInit();
