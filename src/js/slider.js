@@ -1,7 +1,8 @@
 export default class Slider {
   constructor({ slider, animation, animationDuration, useDots, useAutoPlay, autoPlayInterval }) {
     this.animation = animation;
-    this.slider = slider;
+    this.sliderId = slider;
+    this.slider = document.querySelector(this.sliderId);
     this.slides = document.querySelectorAll(`${slider} .slide`);
     this.btnPrevSlide = document.querySelector(`${slider} .btnPrevSlide`);
     this.btnNextSlide = document.querySelector(`${slider} .btnNextSlide`);
@@ -17,23 +18,38 @@ export default class Slider {
     this.useAutoPlay = useAutoPlay;
     this.autoPlayInterval = autoPlayInterval;
     this.interval;
+    this.firstTouchX;
+    this.firstTouchY;
+    this.diffX;
+    this.diffY;
+    this.touchEndX;
+    this.touchEndY;
   }
 
   sliderInit() {
-    this.btnPrevSlide.addEventListener('click', () => {
-      if(this.currentSlide > 0) {
-        this.changeSlide(this.currentSlide - 1, this.prev);
-      } else {
-        this.changeSlide(this.quantitySlides - 1, this.prev);
-      }
+    this.btnPrevSlide.addEventListener('click', () => this.prevSlide());
+    this.btnNextSlide.addEventListener('click', () => this.nextSlide());
+
+    this.slider.addEventListener('touchstart', e => {
+      this.firstTouchX = Math.floor(e.touches[0].clientX);
+      this.firstTouchY = Math.floor(e.touches[0].clientY);
     });
 
-    this.btnNextSlide.addEventListener('click', () => {
-      if(this.currentSlide < this.quantitySlides - 1) {
-        this.changeSlide(this.currentSlide + 1, this.next);
-      } else {
-        this.changeSlide(0, this.next);
+    this.slider.addEventListener('touchmove', e => {
+      this.touchEndX = Math.floor(e.touches[0].clientX);
+      this.touchEndY = Math.floor(e.touches[0].clientY);
+
+      this.diffX = Math.abs(this.firstTouchX - this.touchEndX);
+      this.diffY = Math.abs(this.firstTouchY - this.touchEndY);
+    });
+
+    this.slider.addEventListener('touchend', () => {
+      if(this.touchEndX < this.firstTouchX && this.diffX > this.diffY) {
+        this.nextSlide();
+      } else if(this.touchEndX > this.firstTouchX && this.diffX > this.diffY) {
+        this.prevSlide();
       }
+      this.diffX = 0;
     });
 
     if(this.useDots) {
@@ -49,10 +65,10 @@ export default class Slider {
         dotsWrapper.appendChild(dot);
       }
 
-      const sliderEl = document.querySelector(this.slider);
+      const sliderEl = document.querySelector(this.sliderId);
       sliderEl.appendChild(dotsWrapper);
-      this.dotsWrapper = document.querySelector(`${this.slider} .dots`);
-      this.dots = document.querySelectorAll(`${this.slider} .dot`);
+      this.dotsWrapper = document.querySelector(`${this.sliderId} .dots`);
+      this.dots = document.querySelectorAll(`${this.sliderId} .dot`);
 
       this.dotsWrapper.addEventListener('click', e => {
         if(e.target && e.target.nodeName === 'LI' && e.target.className === 'dot') {
@@ -75,6 +91,22 @@ export default class Slider {
         this.slides[i].classList.add('hidden-slide');
       }
       this.slides[i].style.animationDuration = `${this.animationDuration}s`;
+    }
+  }
+
+  prevSlide() {
+    if(this.currentSlide > 0) {
+      this.changeSlide(this.currentSlide - 1, this.prev);
+    } else {
+      this.changeSlide(this.quantitySlides - 1, this.prev);
+    }
+  }
+
+  nextSlide() {
+    if(this.currentSlide < this.quantitySlides - 1) {
+      this.changeSlide(this.currentSlide + 1, this.next);
+    } else {
+      this.changeSlide(0, this.next);
     }
   }
 
