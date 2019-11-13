@@ -5,7 +5,7 @@ import './scss/animations/horizontal-shift.scss';
 
 const slider = new Slider({
   slider: '.slider',
-  animation: 'horizontal-shift',
+  animationName: 'horizontal-shift',
   animationDuration: 0.7,
   useDots: true,
   useAutoPlay: true,

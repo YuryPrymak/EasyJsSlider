@@ -15,6 +15,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "max-len": ["error", { "code": 110 }],
     "arrow-parens": [2, "as-needed", {"requireForBlockBody": false}],
     "func-names": ["error", "as-needed"],
     "space-before-function-paren": ["error", "never"],
