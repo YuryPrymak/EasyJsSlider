@@ -1,0 +1,71 @@
+$timingFunction: ease-in-out;
+
+.increase-prev-slide-show {
+  -webkit-animation: showSlide $timingFunction forwards;
+  animation: showSlide $timingFunction forwards;
+  z-index: 1;
+}
+
+.increase-prev-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+}
+
+.increase-next-slide-show {
+  -webkit-animation: showSlide $timingFunction forwards;
+  animation: showSlide $timingFunction forwards;
+  z-index: 1;
+}
+
+.increase-next-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+}
+
+@-webkit-keyframes showSlide {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes showSlide {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes hideSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  99% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hideSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  99% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}

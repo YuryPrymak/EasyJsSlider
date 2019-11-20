@@ -1,0 +1,91 @@
+$timingFunction: ease-in-out;
+
+.bubble-prev-slide-show {
+  -webkit-animation: prevSlideShow $timingFunction forwards;
+  animation: prevSlideShow $timingFunction forwards;
+  z-index: 1;
+}
+
+.bubble-prev-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+}
+
+.bubble-next-slide-show {
+  -webkit-animation: nextSlideShow $timingFunction forwards;
+  animation: nextSlideShow $timingFunction forwards;
+  z-index: 1;
+}
+
+.bubble-next-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+}
+
+@-webkit-keyframes prevSlideShow {
+  from {
+    clip-path: circle(0 at 0 50%);
+  }
+
+  to {
+    clip-path: circle(150% at 0 50%);
+  }
+}
+
+@keyframes prevSlideShow {
+  from {
+    clip-path: circle(0 at 0 50%);
+  }
+
+  to {
+    clip-path: circle(150% at 0 50%);
+  }
+}
+
+@-webkit-keyframes nextSlideShow {
+  from {
+    clip-path: circle(0 at 100% 50%);
+  }
+
+  to {
+    clip-path: circle(150% at 100% 50%);
+  }
+}
+
+@keyframes nextSlideShow {
+  from {
+    clip-path: circle(0 at 100% 50%);
+  }
+
+  to {
+    clip-path: circle(150% at 100% 50%);
+  }
+}
+
+@-webkit-keyframes hideSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  99% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes hideSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  99% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

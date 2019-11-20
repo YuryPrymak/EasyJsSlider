@@ -1,101 +1,101 @@
 $timingFunction: ease-in-out;
 
-.horizontal-shift-prev-slide-show {
+.vertical-shift-prev-slide-show {
   -webkit-animation: prevSlideShow $timingFunction forwards;
   animation: prevSlideShow $timingFunction forwards;
 }
 
-.horizontal-shift-prev-slide-hide {
+.vertical-shift-prev-slide-hide {
   -webkit-animation: prevSlideHide $timingFunction forwards;
   animation: prevSlideHide $timingFunction forwards;
 }
 
-.horizontal-shift-next-slide-show {
+.vertical-shift-next-slide-show {
   -webkit-animation: nextSlideShow $timingFunction forwards;
   animation: nextSlideShow $timingFunction forwards;
 }
 
-.horizontal-shift-next-slide-hide {
+.vertical-shift-next-slide-hide {
   -webkit-animation: nextSlideHide $timingFunction forwards;
   animation: nextSlideHide $timingFunction forwards;
 }
 
 @-webkit-keyframes prevSlideShow {
   from {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes prevSlideShow {
   from {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @-webkit-keyframes prevSlideHide {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   to {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
 }
 
 @keyframes prevSlideHide {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   to {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
 }
 
 @-webkit-keyframes nextSlideShow {
   from {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes nextSlideShow {
   from {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @-webkit-keyframes nextSlideHide {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 }
 
 @keyframes nextSlideHide {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 }

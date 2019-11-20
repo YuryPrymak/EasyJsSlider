@@ -1,0 +1,117 @@
+$timingFunction: ease-in-out;
+
+.fade-shift-prev-slide-show {
+  -webkit-animation: prevSlideShow $timingFunction forwards;
+  animation: prevSlideShow $timingFunction forwards;
+}
+
+.fade-shift-prev-slide-hide {
+  -webkit-animation: prevSlideHide $timingFunction forwards;
+  animation: prevSlideHide $timingFunction forwards;
+}
+
+.fade-shift-next-slide-show {
+  -webkit-animation: nextSlideShow $timingFunction forwards;
+  animation: nextSlideShow $timingFunction forwards;
+}
+
+.fade-shift-next-slide-hide {
+  -webkit-animation: nextSlideHide $timingFunction forwards;
+  animation: nextSlideHide $timingFunction forwards;
+}
+
+@-webkit-keyframes prevSlideShow {
+  from {
+    transform: translateX(-100%) scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes prevSlideShow {
+  from {
+    transform: translateX(-100%) scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes prevSlideHide {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%) scale(.7);
+    opacity: 0;
+  }
+}
+
+@keyframes prevSlideHide {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%) scale(.7);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes nextSlideShow {
+  from {
+    transform: translateX(100%) scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes nextSlideShow {
+  from {
+    transform: translateX(100%) scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes nextSlideHide {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%) scale(.7);
+    opacity: 0;
+  }
+}
+
+@keyframes nextSlideHide {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%) scale(.7);
+    opacity: 0;
+  }
+}

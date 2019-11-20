@@ -1,0 +1,75 @@
+$timingFunction: ease-in-out;
+
+.fade-in-out-prev-slide-show {
+  -webkit-animation: fadeIn $timingFunction forwards;
+  animation: fadeIn $timingFunction forwards;
+}
+
+.fade-in-out-prev-slide-hide {
+  -webkit-animation: fadeOut $timingFunction forwards;
+  animation: fadeOut $timingFunction forwards;
+}
+
+.fade-in-out-next-slide-show {
+  -webkit-animation: fadeIn $timingFunction forwards;
+  animation: fadeIn $timingFunction forwards;
+}
+
+.fade-in-out-next-slide-hide {
+  -webkit-animation: fadeOut $timingFunction forwards;
+  animation: fadeOut $timingFunction forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(99%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(99%);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

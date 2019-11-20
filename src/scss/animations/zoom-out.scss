@@ -1,0 +1,123 @@
+$timingFunction: ease-in-out;
+
+.zoom-out-prev-slide-show {
+  -webkit-animation: showSlide $timingFunction forwards;
+  animation: showSlide $timingFunction forwards;
+}
+
+.zoom-out-prev-slide-hide {
+  -webkit-animation: prevSlideHide $timingFunction forwards;
+  animation: prevSlideHide $timingFunction forwards;
+  z-index: 1;
+}
+
+.zoom-out-next-slide-show {
+  -webkit-animation: showSlide $timingFunction forwards;
+  animation: showSlide $timingFunction forwards;
+}
+
+.zoom-out-next-slide-hide {
+  -webkit-animation: nextSlideHide $timingFunction forwards;
+  animation: nextSlideHide $timingFunction forwards;
+  z-index: 1;
+}
+
+@-webkit-keyframes showSlide {
+  from {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(0);
+  }
+
+  to {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes showSlide {
+  from {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(0);
+  }
+
+  to {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@-webkit-keyframes prevSlideHide {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  50% {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(150%);
+  }
+
+  to {
+    transform: scale(.8) translateX(150%);
+  }
+}
+
+@keyframes prevSlideHide {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  50% {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(150%);
+  }
+
+  to {
+    transform: scale(.8) translateX(150%);
+  }
+}
+
+@-webkit-keyframes nextSlideHide {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  50% {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(-150%);
+  }
+
+  to {
+    transform: scale(.8) translateX(-150%);
+  }
+}
+
+@keyframes nextSlideHide {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  50% {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(-150%);
+  }
+
+  to {
+    transform: scale(.8) translateX(-150%);
+  }
+}

@@ -1,23 +1,25 @@
 $timingFunction: ease-in-out;
 
-.horizontal-shift-prev-slide-show {
+.overlay-prev-slide-show {
   -webkit-animation: prevSlideShow $timingFunction forwards;
   animation: prevSlideShow $timingFunction forwards;
+  z-index: 1;
 }
 
-.horizontal-shift-prev-slide-hide {
-  -webkit-animation: prevSlideHide $timingFunction forwards;
-  animation: prevSlideHide $timingFunction forwards;
+.overlay-prev-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
 }
 
-.horizontal-shift-next-slide-show {
+.overlay-next-slide-show {
   -webkit-animation: nextSlideShow $timingFunction forwards;
   animation: nextSlideShow $timingFunction forwards;
+  z-index: 1;
 }
 
-.horizontal-shift-next-slide-hide {
-  -webkit-animation: nextSlideHide $timingFunction forwards;
-  animation: nextSlideHide $timingFunction forwards;
+.overlay-next-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
 }
 
 @-webkit-keyframes prevSlideShow {
@@ -37,26 +39,6 @@ $timingFunction: ease-in-out;
 
   to {
     transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes prevSlideHide {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes prevSlideHide {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100%);
   }
 }
 
@@ -80,8 +62,12 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideHide {
+@-webkit-keyframes hideSlide {
   from {
+    transform: translateX(0);
+  }
+
+  99% {
     transform: translateX(0);
   }
 
@@ -90,8 +76,12 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideHide {
+@keyframes hideSlide {
   from {
+    transform: translateX(0);
+  }
+
+  99% {
     transform: translateX(0);
   }
 

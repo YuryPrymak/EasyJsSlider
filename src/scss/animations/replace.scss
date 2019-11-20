@@ -1,0 +1,101 @@
+$timingFunction: ease-in-out;
+
+.replace-prev-slide-show {
+  -webkit-animation: prevSlideShow $timingFunction forwards;
+  animation: prevSlideShow $timingFunction forwards;
+}
+
+.replace-prev-slide-hide {
+  -webkit-animation: prevSlideHide $timingFunction forwards;
+  animation: prevSlideHide $timingFunction forwards;
+}
+
+.replace-next-slide-show {
+  -webkit-animation: nextSlideShow $timingFunction forwards;
+  animation: nextSlideShow $timingFunction forwards;
+}
+
+.replace-next-slide-hide {
+  -webkit-animation: nextSlideHide $timingFunction forwards;
+  animation: nextSlideHide $timingFunction forwards;
+}
+
+@-webkit-keyframes prevSlideShow {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes prevSlideShow {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes prevSlideHide {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+@keyframes prevSlideHide {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+@-webkit-keyframes nextSlideShow {
+  from {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes nextSlideShow {
+  from {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes nextSlideHide {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+}
+
+@keyframes nextSlideHide {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+}

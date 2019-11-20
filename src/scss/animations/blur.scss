@@ -1,0 +1,53 @@
+$timingFunction: ease-in-out;
+
+.blur-prev-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+  z-index: 1;
+}
+
+.blur-next-slide-hide {
+  -webkit-animation: hideSlide $timingFunction forwards;
+  animation: hideSlide $timingFunction forwards;
+  z-index: 1;
+}
+
+@-webkit-keyframes hideSlide {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  99% {
+    transform: translateX(0);
+    opacity: 0;
+    filter: blur(50px);
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur(50px);
+  }
+}
+
+@keyframes hideSlide {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  99% {
+    transform: translateX(0);
+    opacity: 0;
+    filter: blur(50px);
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+    filter: blur(50px);
+  }
+}

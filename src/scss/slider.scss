@@ -57,6 +57,7 @@
     background-color: transparent;
     cursor: pointer;
     outline: none;
+    z-index: 3;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -95,6 +96,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    z-index: 3;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
