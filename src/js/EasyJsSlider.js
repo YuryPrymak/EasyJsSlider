@@ -1,4 +1,4 @@
-export default class Slider {
+export default class EasyJsSlider {
   constructor({ slider, animationName, animationDuration = 1, useDots = false, useAutoPlay = false, autoPlayInterval = 5 }) {
     this.slider = document.querySelector(slider);
     this.slides = this.slider.querySelectorAll('.slide');

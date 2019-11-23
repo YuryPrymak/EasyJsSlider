@@ -1,10 +1,10 @@
-import Slider from './js/slider';
+import EasyJsSlider from './js/EasyJsSlider';
 
-import './scss/slider.scss';
+import './scss/EasyJsSlider.scss';
 import './scss/animations/fade-shift.scss';
 
-const slider = new Slider({
-  slider: '.slider',
+const slider = new EasyJsSlider({
+  slider: '.easy-js-slider',
   animationName: 'fade-shift',
   animationDuration: 1,
   useDots: true,
