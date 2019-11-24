@@ -1,28 +1,28 @@
 $timingFunction: ease-in-out;
 
 .overlay-prev-slide-show {
-  -webkit-animation: prevSlideShow $timingFunction forwards;
-  animation: prevSlideShow $timingFunction forwards;
+  -webkit-animation: overlay-prevSlideShow $timingFunction forwards;
+  animation: overlay-prevSlideShow $timingFunction forwards;
   z-index: 1;
 }
 
 .overlay-prev-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: overlay-hideSlide $timingFunction forwards;
+  animation: overlay-hideSlide $timingFunction forwards;
 }
 
 .overlay-next-slide-show {
-  -webkit-animation: nextSlideShow $timingFunction forwards;
-  animation: nextSlideShow $timingFunction forwards;
+  -webkit-animation: overlay-nextSlideShow $timingFunction forwards;
+  animation: overlay-nextSlideShow $timingFunction forwards;
   z-index: 1;
 }
 
 .overlay-next-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: overlay-hideSlide $timingFunction forwards;
+  animation: overlay-hideSlide $timingFunction forwards;
 }
 
-@-webkit-keyframes prevSlideShow {
+@-webkit-keyframes overlay-prevSlideShow {
   from {
     transform: translateX(-100%);
   }
@@ -32,7 +32,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideShow {
+@keyframes overlay-prevSlideShow {
   from {
     transform: translateX(-100%);
   }
@@ -42,7 +42,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideShow {
+@-webkit-keyframes overlay-nextSlideShow {
   from {
     transform: translateX(100%);
   }
@@ -52,7 +52,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideShow {
+@keyframes overlay-nextSlideShow {
   from {
     transform: translateX(100%);
   }
@@ -62,7 +62,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes hideSlide {
+@-webkit-keyframes overlay-hideSlide {
   from {
     transform: translateX(0);
   }
@@ -76,7 +76,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes hideSlide {
+@keyframes overlay-hideSlide {
   from {
     transform: translateX(0);
   }

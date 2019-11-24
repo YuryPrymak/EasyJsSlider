@@ -1,26 +1,26 @@
 $timingFunction: ease-in-out;
 
 .fade-in-out-prev-slide-show {
-  -webkit-animation: fadeIn $timingFunction forwards;
-  animation: fadeIn $timingFunction forwards;
+  -webkit-animation: fadeInOut-fadeIn $timingFunction forwards;
+  animation: fadeInOut-fadeIn $timingFunction forwards;
 }
 
 .fade-in-out-prev-slide-hide {
-  -webkit-animation: fadeOut $timingFunction forwards;
-  animation: fadeOut $timingFunction forwards;
+  -webkit-animation: fadeInOut-fadeOut $timingFunction forwards;
+  animation: fadeInOut-fadeOut $timingFunction forwards;
 }
 
 .fade-in-out-next-slide-show {
-  -webkit-animation: fadeIn $timingFunction forwards;
-  animation: fadeIn $timingFunction forwards;
+  -webkit-animation: fadeInOut-fadeIn $timingFunction forwards;
+  animation: fadeInOut-fadeIn $timingFunction forwards;
 }
 
 .fade-in-out-next-slide-hide {
-  -webkit-animation: fadeOut $timingFunction forwards;
-  animation: fadeOut $timingFunction forwards;
+  -webkit-animation: fadeInOut-fadeOut $timingFunction forwards;
+  animation: fadeInOut-fadeOut $timingFunction forwards;
 }
 
-@-webkit-keyframes fadeOut {
+@-webkit-keyframes fadeInOut-fadeOut {
   from {
     opacity: 1;
     transform: translateX(0);
@@ -37,7 +37,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes fadeOut {
+@keyframes fadeInOut-fadeOut {
   from {
     opacity: 1;
     transform: translateX(0);
@@ -54,7 +54,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeInOut-fadeIn {
   from {
     opacity: 0;
   }
@@ -64,7 +64,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeInOut-fadeIn {
   from {
     opacity: 0;
   }

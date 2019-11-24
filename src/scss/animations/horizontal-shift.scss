@@ -1,26 +1,26 @@
 $timingFunction: ease-in-out;
 
 .horizontal-shift-prev-slide-show {
-  -webkit-animation: prevSlideShow $timingFunction forwards;
-  animation: prevSlideShow $timingFunction forwards;
+  -webkit-animation: horizontalShift-prevSlideShow $timingFunction forwards;
+  animation: horizontalShift-prevSlideShow $timingFunction forwards;
 }
 
 .horizontal-shift-prev-slide-hide {
-  -webkit-animation: prevSlideHide $timingFunction forwards;
-  animation: prevSlideHide $timingFunction forwards;
+  -webkit-animation: horizontalShift-prevSlideHide $timingFunction forwards;
+  animation: horizontalShift-prevSlideHide $timingFunction forwards;
 }
 
 .horizontal-shift-next-slide-show {
-  -webkit-animation: nextSlideShow $timingFunction forwards;
-  animation: nextSlideShow $timingFunction forwards;
+  -webkit-animation: horizontalShift-nextSlideShow $timingFunction forwards;
+  animation: horizontalShift-nextSlideShow $timingFunction forwards;
 }
 
 .horizontal-shift-next-slide-hide {
-  -webkit-animation: nextSlideHide $timingFunction forwards;
-  animation: nextSlideHide $timingFunction forwards;
+  -webkit-animation: horizontalShift-nextSlideHide $timingFunction forwards;
+  animation: horizontalShift-nextSlideHide $timingFunction forwards;
 }
 
-@-webkit-keyframes prevSlideShow {
+@-webkit-keyframes horizontalShift-prevSlideShow {
   from {
     transform: translateX(-100%);
   }
@@ -30,7 +30,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideShow {
+@keyframes horizontalShift-prevSlideShow {
   from {
     transform: translateX(-100%);
   }
@@ -40,7 +40,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes prevSlideHide {
+@-webkit-keyframes horizontalShift-prevSlideHide {
   from {
     transform: translateX(0);
   }
@@ -50,7 +50,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideHide {
+@keyframes horizontalShift-prevSlideHide {
   from {
     transform: translateX(0);
   }
@@ -60,7 +60,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideShow {
+@-webkit-keyframes horizontalShift-nextSlideShow {
   from {
     transform: translateX(100%);
   }
@@ -70,7 +70,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideShow {
+@keyframes horizontalShift-nextSlideShow {
   from {
     transform: translateX(100%);
   }
@@ -80,7 +80,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideHide {
+@-webkit-keyframes horizontalShift-nextSlideHide {
   from {
     transform: translateX(0);
   }
@@ -90,7 +90,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideHide {
+@keyframes horizontalShift-nextSlideHide {
   from {
     transform: translateX(0);
   }

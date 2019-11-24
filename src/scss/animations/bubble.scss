@@ -1,28 +1,28 @@
 $timingFunction: ease-in-out;
 
 .bubble-prev-slide-show {
-  -webkit-animation: prevSlideShow $timingFunction forwards;
-  animation: prevSlideShow $timingFunction forwards;
+  -webkit-animation: bubble-prevSlideShow $timingFunction forwards;
+  animation: bubble-prevSlideShow $timingFunction forwards;
   z-index: 1;
 }
 
 .bubble-prev-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: bubble-hideSlide $timingFunction forwards;
+  animation: bubble-hideSlide $timingFunction forwards;
 }
 
 .bubble-next-slide-show {
-  -webkit-animation: nextSlideShow $timingFunction forwards;
-  animation: nextSlideShow $timingFunction forwards;
+  -webkit-animation: bubble-nextSlideShow $timingFunction forwards;
+  animation: bubble-nextSlideShow $timingFunction forwards;
   z-index: 1;
 }
 
 .bubble-next-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: bubble-hideSlide $timingFunction forwards;
+  animation: bubble-hideSlide $timingFunction forwards;
 }
 
-@-webkit-keyframes prevSlideShow {
+@-webkit-keyframes bubble-prevSlideShow {
   from {
     clip-path: circle(0 at 0 50%);
   }
@@ -32,7 +32,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideShow {
+@keyframes bubble-prevSlideShow {
   from {
     clip-path: circle(0 at 0 50%);
   }
@@ -42,7 +42,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideShow {
+@-webkit-keyframes bubble-nextSlideShow {
   from {
     clip-path: circle(0 at 100% 50%);
   }
@@ -52,7 +52,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideShow {
+@keyframes bubble-nextSlideShow {
   from {
     clip-path: circle(0 at 100% 50%);
   }
@@ -62,7 +62,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes hideSlide {
+@-webkit-keyframes bubble-hideSlide {
   from {
     transform: translateX(0);
   }
@@ -76,7 +76,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes hideSlide {
+@keyframes bubble-hideSlide {
   from {
     transform: translateX(0);
   }

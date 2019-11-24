@@ -1,28 +1,28 @@
 $timingFunction: ease-in-out;
 
 .increase-prev-slide-show {
-  -webkit-animation: showSlide $timingFunction forwards;
-  animation: showSlide $timingFunction forwards;
+  -webkit-animation: increase-showSlide $timingFunction forwards;
+  animation: increase-showSlide $timingFunction forwards;
   z-index: 1;
 }
 
 .increase-prev-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: increase-hideSlide $timingFunction forwards;
+  animation: increase-hideSlide $timingFunction forwards;
 }
 
 .increase-next-slide-show {
-  -webkit-animation: showSlide $timingFunction forwards;
-  animation: showSlide $timingFunction forwards;
+  -webkit-animation: increase-showSlide $timingFunction forwards;
+  animation: increase-showSlide $timingFunction forwards;
   z-index: 1;
 }
 
 .increase-next-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: increase-hideSlide $timingFunction forwards;
+  animation: increase-hideSlide $timingFunction forwards;
 }
 
-@-webkit-keyframes showSlide {
+@-webkit-keyframes increase-showSlide {
   from {
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
   }
@@ -32,7 +32,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes showSlide {
+@keyframes increase-showSlide {
   from {
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
   }
@@ -42,7 +42,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes hideSlide {
+@-webkit-keyframes increase-hideSlide {
   from {
     transform: translateX(0);
   }
@@ -56,7 +56,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes hideSlide {
+@keyframes increase-hideSlide {
   from {
     transform: translateX(0);
   }

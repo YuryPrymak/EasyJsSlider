@@ -1,28 +1,28 @@
 $timingFunction: ease-in-out;
 
 .zoom-out-prev-slide-show {
-  -webkit-animation: showSlide $timingFunction forwards;
-  animation: showSlide $timingFunction forwards;
+  -webkit-animation: zoomOut-showSlide $timingFunction forwards;
+  animation: zoomOut-showSlide $timingFunction forwards;
 }
 
 .zoom-out-prev-slide-hide {
-  -webkit-animation: prevSlideHide $timingFunction forwards;
-  animation: prevSlideHide $timingFunction forwards;
+  -webkit-animation: zoomOut-prevSlideHide $timingFunction forwards;
+  animation: zoomOut-prevSlideHide $timingFunction forwards;
   z-index: 1;
 }
 
 .zoom-out-next-slide-show {
-  -webkit-animation: showSlide $timingFunction forwards;
-  animation: showSlide $timingFunction forwards;
+  -webkit-animation: zoomOut-showSlide $timingFunction forwards;
+  animation: zoomOut-showSlide $timingFunction forwards;
 }
 
 .zoom-out-next-slide-hide {
-  -webkit-animation: nextSlideHide $timingFunction forwards;
-  animation: nextSlideHide $timingFunction forwards;
+  -webkit-animation: zoomOut-nextSlideHide $timingFunction forwards;
+  animation: zoomOut-nextSlideHide $timingFunction forwards;
   z-index: 1;
 }
 
-@-webkit-keyframes showSlide {
+@-webkit-keyframes zoomOut-showSlide {
   from {
     transform: scale(.8) translateX(0);
   }
@@ -36,7 +36,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes showSlide {
+@keyframes zoomOut-showSlide {
   from {
     transform: scale(.8) translateX(0);
   }
@@ -50,25 +50,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes prevSlideHide {
-  from {
-    transform: scale(1) translateX(0);
-  }
-
-  50% {
-    transform: scale(.8) translateX(0);
-  }
-
-  75% {
-    transform: scale(.8) translateX(150%);
-  }
-
-  to {
-    transform: scale(.8) translateX(150%);
-  }
-}
-
-@keyframes prevSlideHide {
+@-webkit-keyframes zoomOut-prevSlideHide {
   from {
     transform: scale(1) translateX(0);
   }
@@ -86,7 +68,25 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideHide {
+@keyframes zoomOut-prevSlideHide {
+  from {
+    transform: scale(1) translateX(0);
+  }
+
+  50% {
+    transform: scale(.8) translateX(0);
+  }
+
+  75% {
+    transform: scale(.8) translateX(150%);
+  }
+
+  to {
+    transform: scale(.8) translateX(150%);
+  }
+}
+
+@-webkit-keyframes zoomOut-nextSlideHide {
   from {
     transform: scale(1) translateX(0);
   }
@@ -104,7 +104,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideHide {
+@keyframes zoomOut-nextSlideHide {
   from {
     transform: scale(1) translateX(0);
   }

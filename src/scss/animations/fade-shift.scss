@@ -1,26 +1,26 @@
 $timingFunction: ease-in-out;
 
 .fade-shift-prev-slide-show {
-  -webkit-animation: prevSlideShow $timingFunction forwards;
-  animation: prevSlideShow $timingFunction forwards;
+  -webkit-animation: fadeShift-prevSlideShow $timingFunction forwards;
+  animation: fadeShift-prevSlideShow $timingFunction forwards;
 }
 
 .fade-shift-prev-slide-hide {
-  -webkit-animation: prevSlideHide $timingFunction forwards;
-  animation: prevSlideHide $timingFunction forwards;
+  -webkit-animation: fadeShift-prevSlideHide $timingFunction forwards;
+  animation: fadeShift-prevSlideHide $timingFunction forwards;
 }
 
 .fade-shift-next-slide-show {
-  -webkit-animation: nextSlideShow $timingFunction forwards;
-  animation: nextSlideShow $timingFunction forwards;
+  -webkit-animation: fadeShift-nextSlideShow $timingFunction forwards;
+  animation: fadeShift-nextSlideShow $timingFunction forwards;
 }
 
 .fade-shift-next-slide-hide {
-  -webkit-animation: nextSlideHide $timingFunction forwards;
-  animation: nextSlideHide $timingFunction forwards;
+  -webkit-animation: fadeShift-nextSlideHide $timingFunction forwards;
+  animation: fadeShift-nextSlideHide $timingFunction forwards;
 }
 
-@-webkit-keyframes prevSlideShow {
+@-webkit-keyframes fadeShift-prevSlideShow {
   from {
     transform: translateX(-100%) scale(.7);
     opacity: 0;
@@ -32,7 +32,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideShow {
+@keyframes fadeShift-prevSlideShow {
   from {
     transform: translateX(-100%) scale(.7);
     opacity: 0;
@@ -44,7 +44,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes prevSlideHide {
+@-webkit-keyframes fadeShift-prevSlideHide {
   from {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -56,7 +56,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideHide {
+@keyframes fadeShift-prevSlideHide {
   from {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -68,7 +68,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideShow {
+@-webkit-keyframes fadeShift-nextSlideShow {
   from {
     transform: translateX(100%) scale(.7);
     opacity: 0;
@@ -80,7 +80,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideShow {
+@keyframes fadeShift-nextSlideShow {
   from {
     transform: translateX(100%) scale(.7);
     opacity: 0;
@@ -92,7 +92,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideHide {
+@-webkit-keyframes fadeShift-nextSlideHide {
   from {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -104,7 +104,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideHide {
+@keyframes fadeShift-nextSlideHide {
   from {
     transform: translateX(0) scale(1);
     opacity: 1;

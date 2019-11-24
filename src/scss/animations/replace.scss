@@ -1,26 +1,26 @@
 $timingFunction: ease-in-out;
 
 .replace-prev-slide-show {
-  -webkit-animation: prevSlideShow $timingFunction forwards;
-  animation: prevSlideShow $timingFunction forwards;
+  -webkit-animation: replace-prevSlideShow $timingFunction forwards;
+  animation: replace-prevSlideShow $timingFunction forwards;
 }
 
 .replace-prev-slide-hide {
-  -webkit-animation: prevSlideHide $timingFunction forwards;
-  animation: prevSlideHide $timingFunction forwards;
+  -webkit-animation: replace-prevSlideHide $timingFunction forwards;
+  animation: replace-prevSlideHide $timingFunction forwards;
 }
 
 .replace-next-slide-show {
-  -webkit-animation: nextSlideShow $timingFunction forwards;
-  animation: nextSlideShow $timingFunction forwards;
+  -webkit-animation: replace-nextSlideShow $timingFunction forwards;
+  animation: replace-nextSlideShow $timingFunction forwards;
 }
 
 .replace-next-slide-hide {
-  -webkit-animation: nextSlideHide $timingFunction forwards;
-  animation: nextSlideHide $timingFunction forwards;
+  -webkit-animation: replace-nextSlideHide $timingFunction forwards;
+  animation: replace-nextSlideHide $timingFunction forwards;
 }
 
-@-webkit-keyframes prevSlideShow {
+@-webkit-keyframes replace-prevSlideShow {
   from {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
@@ -30,7 +30,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideShow {
+@keyframes replace-prevSlideShow {
   from {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
@@ -40,7 +40,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes prevSlideHide {
+@-webkit-keyframes replace-prevSlideHide {
   from {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
@@ -50,7 +50,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes prevSlideHide {
+@keyframes replace-prevSlideHide {
   from {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
@@ -60,7 +60,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideShow {
+@-webkit-keyframes replace-nextSlideShow {
   from {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
@@ -70,7 +70,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideShow {
+@keyframes replace-nextSlideShow {
   from {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
@@ -80,7 +80,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@-webkit-keyframes nextSlideHide {
+@-webkit-keyframes replace-nextSlideHide {
   from {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
@@ -90,7 +90,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes nextSlideHide {
+@keyframes replace-nextSlideHide {
   from {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }

@@ -1,18 +1,18 @@
 $timingFunction: ease-in-out;
 
 .blur-prev-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: blur-hideSlide $timingFunction forwards;
+  animation: blur-hideSlide $timingFunction forwards;
   z-index: 1;
 }
 
 .blur-next-slide-hide {
-  -webkit-animation: hideSlide $timingFunction forwards;
-  animation: hideSlide $timingFunction forwards;
+  -webkit-animation: blur-hideSlide $timingFunction forwards;
+  animation: blur-hideSlide $timingFunction forwards;
   z-index: 1;
 }
 
-@-webkit-keyframes hideSlide {
+@-webkit-keyframes blur-hideSlide {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -32,7 +32,7 @@ $timingFunction: ease-in-out;
   }
 }
 
-@keyframes hideSlide {
+@keyframes blur-hideSlide {
   from {
     transform: translateX(0);
     opacity: 1;
