@@ -11,6 +11,7 @@ EasyJsSlider is a fully responsive slider written in pure js (es6) and using css
 - Easy to install and configure
 - Has many settings
 - Autoplay
+- Accessible
 
 # Usage
 
@@ -98,6 +99,7 @@ $btnBgColorHover: #ed3833;
 $dotsBgColor: rgba(255, 255, 255, .4);
 $dotsBgColorHover: rgba(255, 255, 255, .8);
 $activeDotBgColor: rgba(255, 255, 255, .8);
+$btnFocusColor: #fff;
 ```
 
 # Available methods

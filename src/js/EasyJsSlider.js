@@ -31,6 +31,14 @@ export default class EasyJsSlider {
     this.slider.addEventListener('touchstart', e => this.touchStart(e));
     this.slider.addEventListener('touchmove', e => this.touchMove(e));
     this.slider.addEventListener('touchend', () => this.touchEnd());
+    this.slider.addEventListener('mousedown', () => {
+      this.slider.classList.remove('focus-visibility');
+    });
+    document.addEventListener('keydown', e => {
+      if(e.keyCode === 9) {
+        this.slider.classList.add('focus-visibility');
+      }
+    });
 
     if(this.useDots) {
       this.createDots();
@@ -135,12 +143,14 @@ export default class EasyJsSlider {
     dotsWrapper.classList.add('dots-wrapper');
 
     for(let i = 0; i < this.slides.length; i++) {
-      const dot = document.createElement('li');
-      dot.classList.add('dot');
+      const li = document.createElement('li');
+      const button = document.createElement('button');
+      button.classList.add('dot');
       if(i === 0) {
-        dot.classList.add('active-dot');
+        button.classList.add('active-dot');
       }
-      dotsWrapper.appendChild(dot);
+      li.appendChild(button);
+      dotsWrapper.appendChild(li);
     }
 
     this.slider.appendChild(dotsWrapper);
@@ -148,8 +158,8 @@ export default class EasyJsSlider {
     this.dots = this.slider.querySelectorAll('.dot');
 
     this.dotsWrapper.addEventListener('click', e => {
-      if(e.target && e.target.nodeName === 'LI' && e.target.className === 'dot') {
-        const index = [...e.target.parentElement.children].indexOf(e.target);
+      if(e.target && e.target.nodeName === 'BUTTON' && !e.target.classList.contains('active-dot')) {
+        const index = [...e.target.parentElement.parentElement.children].indexOf(e.target.parentElement);
         this.currentSlide > index ? this.changeSlide(index, this.prev) : this.changeSlide(index, this.next);
       }
     });
