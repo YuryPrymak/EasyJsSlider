@@ -108,6 +108,8 @@ Method | Description
 --- | ---
 .prevSlide() | Show previous slide
 .nextSlide() | Show next slide
+.startSlider() | Start autoplaying (works if **useAutoPlay: true**)
+.stopSlider() | Stop autoplaying (works if **useAutoPlay: true**)
 
 # License
 

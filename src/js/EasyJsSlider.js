@@ -16,6 +16,7 @@ export default class EasyJsSlider {
     this.dots = null;
     this.useAutoPlay = useAutoPlay;
     this.autoPlayInterval = autoPlayInterval;
+    this.sliderStopped = false;
     this.interval = null;
     this.firstTouchX = null;
     this.firstTouchY = null;
@@ -94,14 +95,24 @@ export default class EasyJsSlider {
   }
 
   startSlider() {
-    clearTimeout(this.interval);
-    this.interval = setTimeout(() => {
-      if(this.currentSlide < this.quantitySlides - 1) {
-        this.changeSlide(this.currentSlide + 1, this.next);
-      } else {
-        this.changeSlide(0, this.next);
-      }
-    }, this.autoPlayInterval * 1000);
+    if(this.useAutoPlay) {
+      this.sliderStopped = false;
+      clearTimeout(this.interval);
+      this.interval = setTimeout(() => {
+        if(this.currentSlide < this.quantitySlides - 1) {
+          this.changeSlide(this.currentSlide + 1, this.next);
+        } else {
+          this.changeSlide(0, this.next);
+        }
+      }, this.autoPlayInterval * 1000);
+    }
+  }
+
+  stopSlider() {
+    if(this.useAutoPlay) {
+      this.sliderStopped = true;
+      clearTimeout(this.interval);
+    }
   }
 
   changeSlide(index, direction) {
@@ -122,7 +133,7 @@ export default class EasyJsSlider {
       }, this.animationDuration * 1000);
     }
 
-    if(this.useAutoPlay) {
+    if(this.useAutoPlay && !this.sliderStopped) {
       this.startSlider();
     }
   }
