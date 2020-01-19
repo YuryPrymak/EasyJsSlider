@@ -2,6 +2,9 @@
 
 EasyJsSlider is a fully responsive slider written in pure js (es6) and using css animation to change slides. It has many beautiful animations and flexible settings.
 
+# Demo
+[Demo](https://yuryprymak.github.io/demos/EasyJsSlider/)
+
 # Features
 
 - Has 10 different animations
