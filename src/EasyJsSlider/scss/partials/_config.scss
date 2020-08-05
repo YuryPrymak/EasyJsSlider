@@ -1,8 +1,9 @@
-$sliderMaxWidth: 900px;
-$sliderMaxHeight: 60%; // 60% from width
-$btnBgColor: #fff;
-$btnBgColorHover: #ed3833;
-$dotsBgColor: rgba(255, 255, 255, .4);
-$dotsBgColorHover: rgba(255, 255, 255, .8);
-$activeDotBgColor: rgba(255, 255, 255, .8);
-$btnFocusColor: #fff;
+$EasyJsSliderMaxWidth: 900px;
+$EasyJsSliderMaxHeight: 60%; // 60% from width
+$EasyJsSliderBgColor: transparent;
+$EasyJsSliderBtnBgColor: #fff;
+$EasyJsSliderBtnBgColorHover: #ed3833;
+$EasyJsSliderBtnFocusColor: #fff;
+$EasyJsSliderDotsBgColor: rgba(255, 255, 255, .4);
+$EasyJsSliderDotsBgColorHover: rgba(255, 255, 255, .8);
+$EasyJsSliderDotBgColorActive: rgba(255, 255, 255, .8);

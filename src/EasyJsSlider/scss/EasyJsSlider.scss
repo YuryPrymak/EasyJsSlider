@@ -1,20 +1,22 @@
 @import 'src/EasyJsSlider/scss/partials/_config.scss';
 
 .easy-js-slider {
-  max-width: $sliderMaxWidth;
+  width: 100%;
+  max-width: $EasyJsSliderMaxWidth;
   position: relative;
+  background-color: $EasyJsSliderBgColor;
   overflow: hidden;
 
   &.focus-visibility .btn:focus,
   &.focus-visibility .dot:focus {
-    box-shadow: 0 0 3px 1px $btnFocusColor;
+    box-shadow: 0 0 3px 1px $EasyJsSliderBtnFocusColor;
   }
 
   .slides {
     width: 100%;
     position: relative;
     padding-left: 0;
-    padding-top: $sliderMaxHeight;
+    padding-top: $EasyJsSliderMaxHeight;
     list-style-type: none;
     margin: 0;
   
@@ -71,12 +73,12 @@
 
     &:hover {
       svg {
-        fill: $btnBgColorHover;
+        fill: $EasyJsSliderBtnBgColorHover;
       }
     }
 
     svg {
-      fill: $btnBgColor;
+      fill: $EasyJsSliderBtnBgColor;
       -webkit-transition: fill .2s ease-in-out;
       -moz-transition: fill .2s ease-in-out;
       -ms-transition: fill .2s ease-in-out;
@@ -113,7 +115,7 @@
       height: 10px;
       margin: 0 3px;
       padding: 0;
-      background-color: $dotsBgColor;
+      background-color: $EasyJsSliderDotsBgColor;
       border: none;
       border-radius: 50%;
       outline: none;
@@ -126,14 +128,14 @@
 
       @media (hover: hover) {
         &:hover {
-          background-color: $dotsBgColorHover;
+          background-color: $EasyJsSliderDotsBgColorHover;
           transform: scale(1.2);
         }
       }
     }
 
     .active-dot {
-      background-color: $activeDotBgColor;
+      background-color: $EasyJsSliderDotBgColorActive;
       transform: scale(1.2);
     }
   }

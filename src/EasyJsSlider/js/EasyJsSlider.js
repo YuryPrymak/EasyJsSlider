@@ -27,6 +27,26 @@ export default class EasyJsSlider {
   }
 
   sliderInit() {
+    this.addEventListeners();
+
+    if(this.useDots) {
+      this.createDots();
+    }
+
+    if(this.useAutoPlay) {
+      this.startSlider();
+    }
+
+    this.slides.forEach((slide, i) => {
+      if(i !== 0) {
+        slide.classList.add('hidden-slide');
+      }
+
+      slide.style.animationDuration = `${this.animationDuration}s`;
+    });
+  }
+
+  addEventListeners() {
     this.btnPrevSlide.addEventListener('click', () => this.prevSlide());
     this.btnNextSlide.addEventListener('click', () => this.nextSlide());
     this.slider.addEventListener('touchstart', e => this.touchStart(e));
@@ -40,21 +60,6 @@ export default class EasyJsSlider {
         this.slider.classList.add('focus-visibility');
       }
     });
-
-    if(this.useDots) {
-      this.createDots();
-    }
-
-    if(this.useAutoPlay) {
-      this.startSlider();
-    }
-
-    for(let i = 0; i < this.slides.length; i++) {
-      if(i !== 0) {
-        this.slides[i].classList.add('hidden-slide');
-      }
-      this.slides[i].style.animationDuration = `${this.animationDuration}s`;
-    }
   }
 
   prevSlide() {
@@ -91,6 +96,7 @@ export default class EasyJsSlider {
     } else if(this.touchEndX > this.firstTouchX && this.diffX > this.diffY) {
       this.prevSlide();
     }
+
     this.diffX = 0;
   }
 
@@ -146,6 +152,7 @@ export default class EasyJsSlider {
       `${this.animationName}-prev-slide-show`,
       `${this.animationName}-prev-slide-hide`,
     ];
+
     this.slides[this.currentSlide].classList.remove(...classes);
   }
 
@@ -156,10 +163,14 @@ export default class EasyJsSlider {
     for(let i = 0; i < this.slides.length; i++) {
       const li = document.createElement('li');
       const button = document.createElement('button');
+
       button.classList.add('dot');
+      button.setAttribute('data-dot-index', i);
+
       if(i === 0) {
         button.classList.add('active-dot');
       }
+
       li.appendChild(button);
       dotsWrapper.appendChild(li);
     }
@@ -170,16 +181,15 @@ export default class EasyJsSlider {
 
     this.dotsWrapper.addEventListener('click', e => {
       if(e.target && e.target.nodeName === 'BUTTON' && !e.target.classList.contains('active-dot')) {
-        const index = [...e.target.parentElement.parentElement.children].indexOf(e.target.parentElement);
+        const index = parseInt(e.target.dataset.dotIndex, 10);
+
         this.currentSlide > index ? this.changeSlide(index, this.prev) : this.changeSlide(index, this.next);
       }
     });
   }
 
   changeDot(index) {
-    for(let i = 0; i < this.dots.length; i++) {
-      this.dots[i].classList.remove('active-dot');
-    }
+    this.dots.forEach(dot => dot.classList.remove('active-dot'));
     this.dots[index].classList.add('active-dot');
   }
 }
