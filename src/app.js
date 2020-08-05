@@ -1,7 +1,7 @@
-import EasyJsSlider from './js/EasyJsSlider';
+import EasyJsSlider from './EasyJsSlider/js/EasyJsSlider';
 
-import './scss/EasyJsSlider.scss';
-import './scss/animations/fade-shift.scss';
+import './EasyJsSlider/scss/EasyJsSlider.scss';
+import './EasyJsSlider/scss/animations/fade-shift.scss';
 
 const slider = new EasyJsSlider({
   slider: '.easy-js-slider',
