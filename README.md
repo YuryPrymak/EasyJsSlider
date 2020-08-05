@@ -2,6 +2,12 @@
 
 EasyJsSlider is a fully responsive slider written in pure js (es6) and using css animation to change slides. It has many beautiful animations and flexible settings.
 
+- [Demo](#demo)
+- [Features](#features)
+- [Usage](#usage)
+- [Available methods](#available-methods)
+- [License](#license)
+
 # Demo
 [Demo](https://yuryprymak.github.io/demos/EasyJsSlider/)
 
@@ -18,9 +24,9 @@ EasyJsSlider is a fully responsive slider written in pure js (es6) and using css
 
 # Usage
 
-Download folder **EasyJsSlider** from **production** branch and put it on your **src** folder.
+Copy folder **EasyJsSlider** from **src/** and put it in your **src** folder.
 
-HTML structure:
+Paste the following html code to your html file
 
 ```html
 <div class="easy-js-slider">
@@ -68,7 +74,7 @@ const slider = new EasyJsSlider({
 slider.sliderInit();
 ```
 
-Summary file **src/app.js**
+Summary config
 
 ```js
 import EasyJsSlider from './EasyJsSlider/js/EasyJsSlider';
@@ -89,20 +95,21 @@ slider.sliderInit();
 
 In the configuration file **src/EasyJsSlider/scss/partials/_config.scss** you can change the max-width and max-height. Also you can change colors.
 
-You can set max-height:
+You can set max-height ($EasyJsSliderMaxHeight):
 - fixed in the pixels (px)
 - relative height from width in the percent (%)
 - use **vh** units.
 
 ```
-$sliderMaxWidth: 900px;
-$sliderMaxHeight: 60%; // 60% from width
-$btnBgColor: #fff;
-$btnBgColorHover: #ed3833;
-$dotsBgColor: rgba(255, 255, 255, .4);
-$dotsBgColorHover: rgba(255, 255, 255, .8);
-$activeDotBgColor: rgba(255, 255, 255, .8);
-$btnFocusColor: #fff;
+$EasyJsSliderMaxWidth: 900px;
+$EasyJsSliderMaxHeight: 60%; // 60% from width
+$EasyJsSliderBgColor: transparent;
+$EasyJsSliderBtnBgColor: #fff;
+$EasyJsSliderBtnBgColorHover: #ed3833;
+$EasyJsSliderBtnFocusColor: #fff;
+$EasyJsSliderDotsBgColor: rgba(255, 255, 255, .4);
+$EasyJsSliderDotsBgColorHover: rgba(255, 255, 255, .8);
+$EasyJsSliderDotBgColorActive: rgba(255, 255, 255, .8);
 ```
 
 # Available methods
